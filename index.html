@@ -149,6 +149,40 @@
       50% { transform: scale(1.15); }
       100% { transform: scale(1); }
     }
+      /* ========== [INÍCIO DO NOVO CÓDIGO] FORMULÁRIO RESPONSIVO ========== */
+  form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    padding: 1rem;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+    border: 2px solid #000;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  @media (max-width: 600px) {
+    input[type="text"],
+    input[type="email"],
+    .cta-button {
+      max-width: 90%;
+    }
+  }
+  /* ========== [FIM DO NOVO CÓDIGO] ========== */
   </style>
 </head>
 <body>
