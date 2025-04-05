@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mindie – Um guia para a sua nutrição</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>MindFoodie – Um guia para a sua nutrição</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Gochi+Hand&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -13,45 +13,58 @@
       color: #000;
       overflow-x: hidden;
     }
-
+    /* --- Cabeçalho Personalizado --- */
     header {
-      padding: 2rem 2rem 2.5rem;
+      padding: 1rem 2rem 1.5rem;
       text-align: center;
       background-color: #A3B18A;
       color: #fff;
       border-bottom: 4px solid #000;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-
     .brain-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 0.3rem;
+      width: 70px;
+      height: 70px;
+      margin: -0.3rem auto 0;
       background-image: url('https://i.postimg.cc/Bjtnk3zQ/Cerebro.png');
       background-size: contain;
       background-repeat: no-repeat;
-      animation: pulseBrain 2s infinite;
+      background-position: center bottom;
     }
-
     header h1 {
+      margin: 0.3rem 0 0;
+      font-size: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 5rem;
+    }
+    .mind {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: #000;
       font-size: 2.5rem;
-      margin: 0;
+      margin-right: 0.4rem;
+      letter-spacing: -0.5px;
+      padding-bottom: 0.5rem;
     }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: #F8EEE9;
-      animation: fadeIn 2s ease-in-out;
+    .foodie {
+      font-family: 'Gochi Hand', cursive;
+      color: #CBB7D4;
+      font-size: 3.8rem;
+      text-shadow: 
+        2px 2px 0 #000,
+        4px 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+      top: -0.2rem;
     }
-
     .highlight {
       background-color: #E8AEB7;
       color: #000;
       padding: 0.25rem 0.5rem;
       border-radius: 8px;
     }
-
+    /* --- Estilos Originais (Restante do HTML) --- */
     main {
       max-width: 800px;
       margin: 4rem auto;
@@ -60,21 +73,17 @@
       animation: floatIn 2s ease-out;
       background-color: #ffffff;
     }
-
     h2 {
       font-size: 1.75rem;
       margin-bottom: 1rem;
     }
-
     p {
       font-size: 1.1rem;
       line-height: 1.6;
     }
-
     form {
       margin-top: 2rem;
     }
-
     input[type="email"] {
       padding: 1rem;
       width: 100%;
@@ -84,7 +93,6 @@
       border-radius: 12px;
       margin-bottom: 1rem;
     }
-
     .cta-button {
       background-color: #000;
       color: #fff;
@@ -95,12 +103,10 @@
       cursor: pointer;
       transition: background 0.3s ease, transform 0.2s ease;
     }
-
     .cta-button:hover {
       background-color: #333;
       transform: translateY(-3px);
     }
-
     #popup {
       display: none;
       position: fixed;
@@ -114,7 +120,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       z-index: 1000;
     }
-
     #popup button {
       margin-top: 1rem;
       background-color: #A3B18A;
@@ -124,7 +129,6 @@
       border-radius: 8px;
       cursor: pointer;
     }
-
     footer {
       text-align: center;
       padding: 2rem;
@@ -133,17 +137,14 @@
       font-size: 0.9rem;
       color: #000;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes floatIn {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
-
     @keyframes pulseBrain {
       0% { transform: scale(1); }
       50% { transform: scale(1.15); }
@@ -152,15 +153,21 @@
   </style>
 </head>
 <body>
+  <!-- Cabeçalho Personalizado -->
   <header>
     <div class="brain-icon"></div>
-    <h1>Mindie</h1>
+    <h1>
+      <span class="mind">Mind</span>
+      <span class="foodie">Foodie</span>
+    </h1>
     <p><span class="highlight">Comece pela mente.</span> Um guia para a sua nutrição.</p>
   </header>
+
+  <!-- Conteúdo Original (Mantido Integralmente) -->
   <main>
     <h2>Em breve: uma nova forma de cuidar de você</h2>
     <p>
-      Conheça Mindie, o agente de IA que une psicologia e nutrição para te ajudar
+      Conheça MindFoodie, o agente de IA que une psicologia e nutrição para te ajudar
       a entender seus hábitos, emoções e fazer escolhas mais conscientes. Tudo no seu tempo, no seu ritmo.
     </p>
     <form id="waitlist-form">
@@ -174,13 +181,14 @@
     </div>
   </main>
   <footer>
-    © 2025 Mindie • Desenvolvido por <a href="https://auriosai.com" target="_blank" style="color: inherit; text-decoration: underline;">Aurios AI</a><br />
-    <a href="https://mindie.com/politica-de-privacidade" target="_blank" style="color: inherit; text-decoration: underline; display: inline-block; margin-top: 0.5rem;">Política de Privacidade</a><br />
+    © 2025 MindFoodie • Desenvolvido por <a href="https://auriosai.com" target="_blank" style="color: inherit; text-decoration: underline;">Aurios AI</a><br />
+    <a href="https://mindfoodie.com/politica-de-privacidade" target="_blank" style="color: inherit; text-decoration: underline; display: inline-block; margin-top: 0.5rem;">Política de Privacidade</a><br />
     <span style="display:inline-block; margin-top: 0.5rem;">Icons by <a href="https://www.flaticon.com/free-icons/brain" title="brain icons" style="color: inherit; text-decoration: underline;" target="_blank">Freepik - Flaticon</a></span>
     <br />
     <span style="display:inline-block; margin-top: 1rem; color: #666;">Este site é protegido pelo Google reCAPTCHA e está sujeito à <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration: underline; color: inherit;">Política de Privacidade</a> e aos <a href="https://policies.google.com/terms" target="_blank" style="text-decoration: underline; color: inherit;">Termos de Serviço</a> do Google.</span>
   </footer>
 
+  <!-- Script Original (Webhook Funcional) -->
   <script>
     document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
       e.preventDefault();
