@@ -13,7 +13,6 @@
       color: #000;
       overflow-x: hidden;
     }
-    /* --- Cabeçalho Personalizado --- */
     header {
       padding: 1rem 2rem 1.5rem;
       text-align: center;
@@ -64,7 +63,6 @@
       padding: 0.25rem 0.5rem;
       border-radius: 8px;
     }
-    /* --- Estilos Originais (Restante do HTML) --- */
     main {
       max-width: 800px;
       margin: 4rem auto;
@@ -84,6 +82,7 @@
     form {
       margin-top: 2rem;
     }
+    input[type="text"],
     input[type="email"] {
       padding: 1rem;
       width: 100%;
@@ -153,7 +152,6 @@
   </style>
 </head>
 <body>
-  <!-- Cabeçalho Personalizado -->
   <header>
     <div class="brain-icon"></div>
     <h1>
@@ -162,8 +160,6 @@
     </h1>
     <p><span class="highlight">Comece pela mente.</span> Um guia para a sua nutrição.</p>
   </header>
-
-  <!-- Conteúdo Original (Mantido Integralmente) -->
   <main>
     <h2>Em breve: uma nova forma de cuidar de você</h2>
     <p>
@@ -171,6 +167,9 @@
       a entender seus hábitos, emoções e fazer escolhas mais conscientes. Tudo no seu tempo, no seu ritmo.
     </p>
     <form id="waitlist-form">
+      <!-- Campo de Nome (Novo) -->
+      <input type="text" name="name" id="name" placeholder="Seu nome completo" required />
+      <!-- Campo de E-mail (Existente) -->
       <input type="email" name="email" id="email" placeholder="Seu e-mail" required />
       <br />
       <button class="cta-button" type="submit">Quero entrar na lista de espera</button>
@@ -188,10 +187,11 @@
     <span style="display:inline-block; margin-top: 1rem; color: #666;">Este site é protegido pelo Google reCAPTCHA e está sujeito à <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration: underline; color: inherit;">Política de Privacidade</a> e aos <a href="https://policies.google.com/terms" target="_blank" style="text-decoration: underline; color: inherit;">Termos de Serviço</a> do Google.</span>
   </footer>
 
-  <!-- Script Original (Webhook Funcional) -->
+  <!-- JavaScript Atualizado (com nome) -->
   <script>
     document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
       e.preventDefault();
+      const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
 
       try {
@@ -200,11 +200,15 @@
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ email })
+          body: JSON.stringify({ 
+            name: name,  // Campo novo
+            email: email 
+          })
         });
 
         if (response.ok) {
           document.getElementById('popup').style.display = 'block';
+          document.getElementById('name').value = '';  // Limpa o nome
           document.getElementById('email').value = '';
         } else {
           alert('Algo deu errado. Tente novamente.');
