@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mindie – Um guia para a sua nutrição</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #000;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 2rem 2rem 2.5rem;
+      text-align: center;
+      background-color: #A3B18A;
+      color: #fff;
+      border-bottom: 4px solid #000;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .brain-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 0.3rem;
+      background-image: url('https://i.postimg.cc/Bjtnk3zQ/Cerebro.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: pulseBrain 2s infinite;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #F8EEE9;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .highlight {
+      background-color: #E8AEB7;
+      color: #000;
+      padding: 0.25rem 0.5rem;
+      border-radius: 8px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      text-align: center;
+      animation: floatIn 2s ease-out;
+      background-color: #ffffff;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    form {
+      margin-top: 2rem;
+    }
+
+    input[type="email"] {
+      padding: 1rem;
+      width: 100%;
+      max-width: 400px;
+      font-size: 1rem;
+      border: 2px solid #000;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .cta-button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #333;
+      transform: translateY(-3px);
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 2px solid #000;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    #popup button {
+      margin-top: 1rem;
+      background-color: #A3B18A;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #D9CBEF;
+      border-top: 4px solid #000;
+      font-size: 0.9rem;
+      color: #000;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pulseBrain {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brain-icon"></div>
+    <h1>Mindie</h1>
+    <p><span class="highlight">Comece pela mente.</span> Um guia para a sua nutrição.</p>
+  </header>
+  <main>
+    <h2>Em breve: uma nova forma de cuidar de você</h2>
+    <p>
+      Conheça Mindie, o agente de IA que une psicologia e nutrição para te ajudar
+      a entender seus hábitos, emoções e fazer escolhas mais conscientes. Tudo no seu tempo, no seu ritmo.
+    </p>
+    <form id="waitlist-form">
+      <input type="email" name="email" id="email" placeholder="Seu e-mail" required />
+      <br />
+      <button class="cta-button" type="submit">Quero entrar na lista de espera</button>
+    </form>
+    <div id="popup">
+      Obrigada por se inscrever! Em breve entraremos em contato 💜<br />
+      <button onclick="document.getElementById('popup').style.display='none'">Fechar</button>
+    </div>
+  </main>
+  <footer>
+    © 2025 Mindie • Desenvolvido por <a href="https://auriosai.com" target="_blank" style="color: inherit; text-decoration: underline;">Aurios AI</a><br />
+    <a href="https://mindie.com/politica-de-privacidade" target="_blank" style="color: inherit; text-decoration: underline; display: inline-block; margin-top: 0.5rem;">Política de Privacidade</a><br />
+    <span style="display:inline-block; margin-top: 0.5rem;">Icons by <a href="https://www.flaticon.com/free-icons/brain" title="brain icons" style="color: inherit; text-decoration: underline;" target="_blank">Freepik - Flaticon</a></span>
+    <br />
+    <span style="display:inline-block; margin-top: 1rem; color: #666;">Este site é protegido pelo Google reCAPTCHA e está sujeito à <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration: underline; color: inherit;">Política de Privacidade</a> e aos <a href="https://policies.google.com/terms" target="_blank" style="text-decoration: underline; color: inherit;">Termos de Serviço</a> do Google.</span>
+  </footer>
+
+  <script>
+    document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+
+      try {
+        const response = await fetch('https://webhook.auriosai.com/webhook/mindieEspera', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email })
+        });
+
+        if (response.ok) {
+          document.getElementById('popup').style.display = 'block';
+          document.getElementById('email').value = '';
+        } else {
+          alert('Algo deu errado. Tente novamente.');
+        }
+      } catch (err) {
+        alert('Erro ao enviar. Verifique sua conexão.');
+      }
+    });
+  </script>
+</body>
+</html>
